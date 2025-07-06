@@ -1,3 +1,14 @@
+// nav-bar
+
+const menuIcon = document.querySelector('.nav-bar i');
+const navMenu = document.querySelector('.nav-bar ul');
+menuIcon.addEventListener('click', () => {
+    navMenu.classList.toggle('navslide');
+});
+
+
+
+
 // choose section
 
 function choose(data) {
@@ -37,3 +48,20 @@ function sample(element) {
         };
     };
 };
+
+// copter
+
+const rocket = document.getElementById('rocket');
+const smoke = document.querySelector('.smoke');
+
+rocket.addEventListener('click', () => {
+    // Add the animation class to both
+    rocket.classList.add('animate');
+    smoke.classList.add('animate');
+
+    // Remove the class after animation ends so it can be triggered again
+    //   setTimeout(() => {
+    //     rocket.classList.remove('animate');
+    //     smoke.classList.remove('animate');
+    //   }, 1000); // Duration must match your animation duration
+});

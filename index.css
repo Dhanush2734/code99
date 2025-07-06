@@ -45,6 +45,11 @@ body {
     letter-spacing: 0.8px;
 }
 
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
 ul {
     display: flex;
     gap: 30px;
@@ -56,6 +61,21 @@ ul a {
     text-decoration: none;
     font-weight: bold;
     color: black;
+    position: relative;
+}
+
+ul a::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+ul a:hover::before {
+    display: block;
 }
 
 /* https://www.figma.com/design/yFPamS3fwvJ7emOXnSWGyf/Student-Project?node-id=3-500&t=ZoJEM8Xv92ubuxnX-0  */
@@ -67,17 +87,19 @@ ul a {
     padding: 20px;
     height: 750px;
     display: flex;
+    gap: 100px;
 
 }
 
 .left-learn {
     width: 50%;
-    padding: 110px 0px 0px 70px;
+    padding: 110px 0px 0px 30px;
 
 }
 
 .left-learn h3 {
-    font-size: 23px;
+    font-size: 22px;
+    font-weight: 700;
     letter-spacing: 0.7px;
 
 }
@@ -183,7 +205,6 @@ ul a {
 
 .right-learn {
     width: 40%;
-    /* background-color: aqua; */
     height: 100%;
     overflow-y: hidden;
     display: flex;
@@ -295,7 +316,8 @@ ul a {
 }
 
 text {
-    letter-spacing: 8px;
+    letter-spacing: 7.5px;
+    word-spacing: 2px;
     font-size: 15px;
 }
 
@@ -362,6 +384,25 @@ text {
     gap: 50px;
 }
 
+.g {
+    animation: scrollups 1s linear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+@keyframes scrollups {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+
+}
+
 .challenge-inside h6 {
     font-size: 45px;
     font-weight: 600;
@@ -379,123 +420,135 @@ text {
     font-weight: 600;
 }
 
-/* timeline */
-.TimelineaSection {
+.timelinesection {
     width: 100%;
-    min-height: 100vh;
-}
-
-.timeline {
-    width: 100%;
-    height: 400vh;
+    min-height: 2300px;
+    display: flex;
     background-color: #288A08;
-    display: flex;
-    overflow-y: hidden;
-    justify-content: center;
-    align-items: center;
+}
+
+.whiteline {
+    width: 50%;
+    min-height: 300px;
+    border-right: 5px solid white;
     position: relative;
-
 }
 
-
-.firstDIVlINE {
-    width: 10px;
-    height: 100%;
-    background-color: white;
-}
-
-.contentDive {
-    width: 80%;
-    height: 70%;
-    position: absolute;
-    left: 13%;
-}
-
-.contensfortimelinefirst {
+.greencontent {
     width: 100%;
-    height: 300px;
-
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 35px;
-
+    gap: 70px;
+    left: 130px;
+    min-height: 300px;
+    margin-top: 100px;
+    padding: 10px 0px 0px 0px;
+    position: absolute;
 }
 
-.contensfortimelinefirst p {
-    width: 35%;
-
-    background-color: white;
-    padding: 50px;
-    position: relative;
-
-    font-size: 30px;
-
+.gcont3 {
+    margin-top: 1170px;
 }
 
-.contensfortimelinefirst p::before {
-    width: 70px;
-    height: 50px;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(90deg);
-    content: "";
+#gcont4 {
+    margin-top: 1720px;
+}
+
+.triangle {
+    width: 100px;
+    height: 100px;
     background-color: white;
     position: absolute;
-    top: 10%;
-    right: -43px;
-
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    left: 25%;
+    z-index: 1;
 }
 
-.contensfortimelinefirst .roundfirst {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background-color: black;
-    margin-top: -28px;
-
-
+.greencontent p {
+    background-color: white;
+    color: black;
+    width: 30%;
+    padding: 100px 30px;
+    font-size: 35px;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 1px;
+    line-height: 100%;
 }
 
-.contensfortimelinefirst .roundfirst h1 {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
+.greencontent .num1 {
     background-color: black;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
-.contensfortimelinefirst h1 {
-    font-size: 45px;
-    color: white;
+.greencontent h1 {
+    font-size: 50px;
+    letter-spacing: 1px;
+    font-weight: 400;
+
 }
 
-
-/* contensfortimelinesecound */
-.contensfortimelinesecound {
+.gcont2 {
+    width: 100%;
     position: absolute;
-    margin-top: 350px;
-    left: -100px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 70px;
+    right: 11%;
+    min-height: 300px;
+    margin-top: 620px;
+    padding: 10px 0px 0px 0px;
+}
+
+.gcont2 p {
+    background-color: white;
+    color: black;
+    width: 30%;
+    padding: 100px 30px;
+    font-size: 35px;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 1px;
+    line-height: 100%;
+}
+
+.gcont2 .num1 {
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.gcont2 h1 {
+    font-size: 50px;
+    letter-spacing: 1px;
+    font-weight: 400;
 
 }
 
-.contensfortimelinesecound p::before {
-    left: -28px !important;
-    width: 80px;
-    height: 60px;
-    transform: rotate(30deg);
-
-}
-
-.contensfortimelinefirst .roundSec {
-    margin-top: -25px;
-}
-
-.contensfortimelinethird {
-    margin-top: 950px;
+.gcont2 .triangle2 {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    right: 25%;
+    z-index: 1;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 
 /* ================= Why choose code99 ================== */
@@ -508,6 +561,10 @@ text {
     padding: 0px 0px 60px 0px;
 }
 
+.box div:hover {
+    background-color: black;
+    color: white;
+}
 
 .why-choose h2 {
     font-size: 55px;
@@ -611,9 +668,22 @@ text {
     margin-bottom: 50px;
 }
 
+.card:hover {
+    box-shadow: 0px 0px 10px black;
+    cursor: pointer;
+}
+
+.boxs:hover {
+    background-color: lightgreen;
+}
+
 .card img {
     padding: 40px;
     height: 200px;
+}
+
+.card {
+    height: 420px !important;
 }
 
 .card h5 {
@@ -633,7 +703,29 @@ text {
     font-size: 15px;
 }
 
+.card button:hover {
+    background-color: black;
+}
+
 /* ============== Copter =============== */
+
+.rocket {
+    transition: transform 1s ease;
+}
+
+.animate {
+    animation: moveleftright 1s ease-in-out forwards;
+}
+
+@keyframes moveleftright {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(200%);
+    }
+}
 
 .copter {
     width: 80%;
@@ -690,7 +782,7 @@ text {
     border-radius: 8px;
 }
 
-/*==============our student placed in =============*/
+/*============== our student placed in =============*/
 
 .our-student h1 {
     letter-spacing: 1px;
@@ -892,7 +984,6 @@ text {
     margin: 10px 0px;
     box-shadow: 2px 2px 5px black;
     border-radius: 3px;
-
 }
 
 .fqas-right {
@@ -940,6 +1031,7 @@ i.downs {
 
 .boxs p {
     display: none;
+    /* transition: all 10s ease-in-out; */
 }
 
 .paras p {
@@ -963,7 +1055,7 @@ i.downs {
 
     justify-content: center;
     text-align: start;
-    gap: 150px;
+    gap: 100px;
 }
 
 .getintouch p {
@@ -973,6 +1065,7 @@ i.downs {
 .social ul {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .social li {
@@ -980,10 +1073,13 @@ i.downs {
     gap: 10px;
 }
 
-.social li::before {
+.social li::before,
+.getintouch li::before {
     display: inline-block;
-    content: " ❤ ";
+    content: " ✔️ ";
+
 }
+
 
 .footend {
     width: 100%;
@@ -997,4 +1093,226 @@ i.downs {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+ol,
+ul {
+    padding-left: 0px;
+}
+
+.getintouch ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.getintouch ul {
+    list-style-type: none;
+}
+
+.nav-bar i {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .learn {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .left-learn {
+        width: 100%;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .left-learn h1 {
+        font-size: 60px;
+    }
+
+    .right-learn {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .right-learn .img1,
+    .right-learn .img2,
+    .right-learn .img3 {
+        width: 80%;
+    }
+
+    .logo-section {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo-left,
+    .logo-right {
+        width: 100%;
+    }
+
+    .count-section {
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 20px;
+        border-radius: 50px;
+    }
+
+    .choose-contents {
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .our-course,
+    .potential {
+        padding: 20px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .fqas-section {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .fqas-left,
+    .fqas-right {
+        width: 100%;
+    }
+
+    .footerconatiner {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .social ul{
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar i {
+        display: block;
+    }
+
+    .nav-bar {
+        position: relative;
+    }
+
+    .nav-bar ul {
+        position: absolute;
+        flex-direction: column;
+        top: 121px;
+        background-color: rgb(82, 186, 82);
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+        left: -150%;
+        z-index: 2;
+        padding: 20px;
+        transition: all 0.5s ease;
+    }
+
+    .nav-bar .enroll {
+        border: none;
+        padding: 8px 25px;
+        border-radius: 40px;
+        background-color: rgb(34, 81, 191);
+        color: white;
+        width: 50%;
+        margin: auto;
+    }
+
+ .nav-bar ul.navslide {
+        left: 0%;
+    }
+
+    .left-learn h1 {
+        font-size: 45px;
+    }
+
+    .greencontent p,
+    .gcont2 p {
+        width: 80%;
+        padding: 40px 20px;
+        font-size: 20px;
+    }
+
+    .greencontent,
+    .gcont2 {
+        flex-direction: column;
+        align-items: center;
+        left: 0 !important;
+        right: 0 !important;
+        text-align: center;
+    }
+
+    .greencontent .num1,
+    .gcont2 .num1 {
+        margin-bottom: 20px;
+    }
+
+    .triangle,
+    .triangle2 {
+        display: none;
+    }
+
+    .copter {
+        height: auto;
+        padding: 20px;
+    }
+
+    .copter .copter-img2 {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .our-student h1 {
+        font-size: 28px;
+    }
+
+    .first-stu,
+    .second-stu {
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .inspire {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .inspire-cont {
+        width: 100%;
+    }
+
+    .ora,
+    .yel {
+        display: none;
+    }
+
+    svg {
+        margin-left: -131px;
+    }
+    .social ul{
+        align-items: center;
+    }
 }
