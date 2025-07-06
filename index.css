@@ -58,6 +58,7 @@ ul {
 ul a {
     letter-spacing: 1px;
     font-size: 20px;
+    margin: 13px 5px 0px 0px;
     text-decoration: none;
     font-weight: bold;
     color: black;
@@ -1200,7 +1201,8 @@ ul {
         gap: 30px;
         text-align: center;
     }
-    .social ul{
+
+    .social ul {
         align-items: center;
     }
 }
@@ -1238,7 +1240,7 @@ ul {
         margin: auto;
     }
 
- .nav-bar ul.navslide {
+    .nav-bar ul.navslide {
         left: 0%;
     }
 
@@ -1312,7 +1314,8 @@ ul {
     svg {
         margin-left: -131px;
     }
-    .social ul{
+
+    .social ul {
         align-items: center;
     }
 }
